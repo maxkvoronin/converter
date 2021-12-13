@@ -1,0 +1,76 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+"""Dictionary of variable translations for the site"""
+type Translate {
+  """Unique index"""
+  id: ID
+
+  """Variable name"""
+  key: String
+
+  """Russian translation"""
+  rus: String
+
+  """English translation"""
+  eng: String
+}
+
+type Query {
+  translate(id: String!): Translate!
+  translates(findTranslateData: FindTranslateInput!): [Translate!]!
+}
+
+"""Inputs for dictionary translations for the site"""
+input FindTranslateInput {
+  """Unique index"""
+  id: ID
+
+  """Key of translate record"""
+  key: String
+
+  """Russian translation"""
+  rus: String
+
+  """English translation"""
+  eng: String
+}
+
+type Mutation {
+  addTranslate(newTranslateData: NewTranslateInput!): Translate!
+  updateTranslate(updateTranslateData: UpdateTranslateInput!): Translate!
+  deleteTranslate(id: String!): Boolean!
+}
+
+"""Inputs for dictionary translations for the site"""
+input NewTranslateInput {
+  """Key of translate record"""
+  key: String!
+
+  """Russian translation"""
+  rus: String
+
+  """English translation"""
+  eng: String
+}
+
+"""Inputs for dictionary translations for the site"""
+input UpdateTranslateInput {
+  """Unique index"""
+  id: ID
+
+  """Key of translate record"""
+  key: String
+
+  """Russian translation"""
+  rus: String
+
+  """English translation"""
+  eng: String
+}
+
+type Subscription {
+  translateAdded: Translate!
+  translateUpdated: Translate!
+}
